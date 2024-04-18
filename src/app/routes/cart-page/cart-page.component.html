@@ -1,0 +1,30 @@
+<div *ngIf="(cart$|async)?.length">
+  <mat-list role="list">
+    <div class="d-flex align-items-center" *ngFor="let cartItem of cart$|async" role="listitem"
+    >{{ "ID: " + cartItem.id }}
+      <button (click)="onRemoveFromCart(cartItem.id)" class="d-flex align-items-center ms-3" mat-icon-button>
+        <mat-icon>remove</mat-icon>
+      </button>
+      <div class="mx-3"> {{ cartItem.count }}</div>
+      <button (click)="onAddToCart(cartItem.id)" class="d-flex align-items-center " mat-icon-button>
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </mat-list>
+  <button mat-flat-button color="primary">Order</button>
+
+  <app-base-content-center [template]="loginTemplate"/>
+
+  <ng-template #loginTemplate>
+    <div class="pt-3"> Please
+      <button mat-flat-button color="primary">Login</button>
+      to create order
+    </div>
+  </ng-template>
+
+
+</div>
+<app-base-content-center *ngIf="!(cart$|async)?.length" [template]="noItemsTemplate"/>
+<ng-template #noItemsTemplate>
+  <div>No items in cart</div>
+</ng-template>

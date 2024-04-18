@@ -1,0 +1,16 @@
+<header class="d-flex justify-content-between container align-items-center ">
+
+  <button mat-button role="button" routerLink="/" class="d-flex align-items-center">
+    Home food
+
+    <mat-icon class="mx-2" aria-hidden="false" aria-label="Example home icon" fontIcon="home"/>
+
+  </button>
+  <div class="position-relative">
+    <button routerLink="cart" class="d-flex align-items-center" mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+      <div class="counter position-absolute top-0 end-0 rounded-circle"> {{ itemsCount }}</div>
+    </button>
+  </div>
+
+</header>

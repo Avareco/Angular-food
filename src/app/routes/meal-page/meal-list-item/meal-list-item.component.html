@@ -1,0 +1,14 @@
+<mat-card class="meal" [routerLink]="meal.id">
+  <img mat-card-image [src]="'http://localhost:3000/'+ meal.image" alt="Photo of a Shiba Inu">
+  <mat-card-content [routerLink]="meal.id" class="meal-desc">
+    <mat-card-title class="fw-bold py-2">{{ meal.name }}</mat-card-title>
+
+    <p>
+      {{ meal.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions click-stop-propagation class="d-flex justify-content-between px-3">
+    {{ meal.price + "$" }}
+    <button (click)="onAddToCart()" class="ms-2" color="accent" mat-flat-button>To cart</button>
+  </mat-card-actions>
+</mat-card>

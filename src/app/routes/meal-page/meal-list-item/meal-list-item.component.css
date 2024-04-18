@@ -1,0 +1,9 @@
+.meal {
+  cursor: pointer;
+  display: flex;
+
+}
+
+.meal-desc {
+  height: 150px;
+}

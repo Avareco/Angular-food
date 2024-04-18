@@ -1,0 +1,17 @@
+<ul class="p-0" ngSwitch>
+  <ng-container *ngSwitchCase="isMealsLoading$ | async">
+    <div class="d-flex flex-wrap container px-0 pb-3">
+      <app-meals-list-page-item
+        *ngFor="let meal of meals$ | async"
+        [meal]="meal"
+        class="w-25 px-2 mt-3">
+      </app-meals-list-page-item>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="!(isMealsLoading$ | async)">
+    Loading...
+  </ng-container>
+  <ng-container *ngSwitchCase="(isMealsLoading$ | async) || (meals$ | async)?.length !== 0">
+    No Meals
+  </ng-container>
+</ul>
