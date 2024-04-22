@@ -7,7 +7,7 @@ export enum MEALS_ACTIONS {
 }
 
 
-export const updateMeals = createAction(
+export const setMeals = createAction(
   MEALS_ACTIONS.UPDATE,
   props<{ value: IMeal[] }>()
 )

@@ -1,5 +1,5 @@
 import {createReducer, on} from "@ngrx/store";
-import {setMealsLoading, updateMeals} from "./meals.actions";
+import {setMealsLoading, setMeals} from "./meals.actions";
 
 export interface IMeal {
   id: string,
@@ -19,7 +19,7 @@ const initialState: IMealStore = {
   isLoading: false
 }
 export const mealsReducer = createReducer(initialState,
-  on(updateMeals, (state, action) =>
+  on(setMeals, (state, action) =>
     ({...state, meals: action.value})
   ),
   on(setMealsLoading, (state, action) =>
